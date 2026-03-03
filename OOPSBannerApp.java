@@ -1,28 +1,31 @@
 /**
  * OOPS Banner App
- * UC6: Render OOPS banner using string array and static method
+ * UC7: Refactor banner using InnerClass
  * @author YourName
- * @version 6.0
+ * @version 7.0
  */
 public class OOPSBannerApp {
 
-    public static void addBannerBorder() {
-        String[] lines = {
-            String.join("  ", " *** ", " *** ", "**** ", " ****"),
-            String.join("  ", "*   *", "*   *", "*   *", "*    "),
-            String.join("  ", "*   *", "*   *", "*   *", "*    "),
-            String.join("  ", "*   *", "*   *", "**** ", " ****"),
-            String.join("  ", "*   *", "*   *", "*    ", "    *"),
-            String.join("  ", "*   *", "*   *", "*    ", "    *"),
-            String.join("  ", " *** ", " *** ", "*    ", "**** ")
-        };
+    static class Renderer {
+        void drawBanner() {
+            String[] lines = {
+                String.join("  ", " *** ", " *** ", "**** ", " ****"),
+                String.join("  ", "*   *", "*   *", "*   *", "*    "),
+                String.join("  ", "*   *", "*   *", "*   *", "*    "),
+                String.join("  ", "*   *", "*   *", "**** ", " ****"),
+                String.join("  ", "*   *", "*   *", "*    ", "    *"),
+                String.join("  ", "*   *", "*   *", "*    ", "    *"),
+                String.join("  ", " *** ", " *** ", "*    ", "**** ")
+            };
 
-        for (String line : lines) {
-            System.out.println(line);
+            for (String line : lines) {
+                System.out.println(line);
+            }
         }
     }
 
     public static void main(String[] args) {
-        addBannerBorder();
+        Renderer renderer = new Renderer();
+        renderer.drawBanner();
     }
 }
