@@ -1,14 +1,12 @@
 /**
  * OOPS Banner App
- * UC5: Inline array initialization using String.join()
+ * UC6: Render OOPS banner using string array and static method
  * @author YourName
- * @version 5.0
+ * @version 6.0
  */
 public class OOPSBannerApp {
 
-    public static void main(String[] args) {
-
-        // Inline array initialization with String.join()
+    public static void addBannerBorder() {
         String[] lines = {
             String.join("  ", " *** ", " *** ", "**** ", " ****"),
             String.join("  ", "*   *", "*   *", "*   *", "*    "),
@@ -19,9 +17,12 @@ public class OOPSBannerApp {
             String.join("  ", " *** ", " *** ", "*    ", "**** ")
         };
 
-        // Enhanced for loop to print banner
         for (String line : lines) {
             System.out.println(line);
         }
+    }
+
+    public static void main(String[] args) {
+        addBannerBorder();
     }
 }
