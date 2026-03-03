@@ -1,25 +1,30 @@
 /**
  * OOPS Banner App
- * UC7: Refactor banner using InnerClass
+ * UC8: Use Map for character patterns and render via function
  * @author YourName
- * @version 7.0
+ * @version 8.0
  */
+import java.util.HashMap;
+import java.util.Map;
+
 public class OOPSBannerApp {
 
     static class Renderer {
-        void drawBanner() {
-            String[] lines = {
-                String.join("  ", " *** ", " *** ", "**** ", " ****"),
-                String.join("  ", "*   *", "*   *", "*   *", "*    "),
-                String.join("  ", "*   *", "*   *", "*   *", "*    "),
-                String.join("  ", "*   *", "*   *", "**** ", " ****"),
-                String.join("  ", "*   *", "*   *", "*    ", "    *"),
-                String.join("  ", "*   *", "*   *", "*    ", "    *"),
-                String.join("  ", " *** ", " *** ", "*    ", "**** ")
-            };
+        Map<Integer, String> banner = new HashMap<>();
 
-            for (String line : lines) {
-                System.out.println(line);
+        private Renderer() {
+            banner.put(0, String.join("  ", " *** ", " *** ", "**** ", " ****"));
+            banner.put(1, String.join("  ", "*   *", "*   *", "*   *", "*    "));
+            banner.put(2, String.join("  ", "*   *", "*   *", "*   *", "*    "));
+            banner.put(3, String.join("  ", "*   *", "*   *", "**** ", " ****"));
+            banner.put(4, String.join("  ", "*   *", "*   *", "*    ", "    *"));
+            banner.put(5, String.join("  ", "*   *", "*   *", "*    ", "    *"));
+            banner.put(6, String.join("  ", " *** ", " *** ", "*    ", "**** "));
+        }
+
+        void drawBanner() {
+            for (Integer i : banner.keySet()) {
+                System.out.println(banner.get(i));
             }
         }
     }
